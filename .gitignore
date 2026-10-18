@@ -4,3 +4,4 @@ __pycache__/
 **/output_dir/*.parquet
 **/output_dir/*/checkpoint-*/
 hw2/data/
+hw3/outputs/full_sft/
