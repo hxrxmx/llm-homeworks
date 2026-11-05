@@ -1,0 +1,45 @@
+{
+  "dataset": "fancyzhx/ag_news",
+  "dataset_revision": "eb185aade064a813bc0b7f42de02595523103ca4",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "seed": 42,
+  "raw_train": 120000,
+  "raw_test": 7600,
+  "removed_train_test_overlap": 10,
+  "removed_train_duplicates": 151,
+  "article_token_limit": 256,
+  "stats": {
+    "train": {
+      "rows": 20000,
+      "article_truncated": 4,
+      "max_sequence": 329,
+      "mean_sequence": 124.6291
+    },
+    "validation": {
+      "rows": 2000,
+      "article_truncated": 1,
+      "max_sequence": 326,
+      "mean_sequence": 122.4555
+    },
+    "test": {
+      "rows": 7600,
+      "article_truncated": 0,
+      "max_sequence": 312,
+      "mean_sequence": 122.0853947368421
+    }
+  },
+  "train_class_counts": {
+    "3": 5000,
+    "2": 5000,
+    "0": 5000,
+    "1": 5000
+  },
+  "validation_class_counts": {
+    "0": 500,
+    "3": 500,
+    "2": 500,
+    "1": 500
+  },
+  "split_sha256": "672f2b2e70274873feb163291673bb43fe18927f6a0c34733f5e18a2a00c1e6c"
+}
