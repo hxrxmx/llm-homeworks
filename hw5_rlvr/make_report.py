@@ -30,7 +30,9 @@ story = []
 
 
 def p(text, style=body):
-    story.append(Paragraph(escape(str(text)).replace("\n", "<br/>"), style))
+    text = escape(str(text)).replace("\n", "<br/>")
+    text = text.replace("GRPO Done Right", "GRPO&nbsp;Done&nbsp;Right")
+    story.append(Paragraph(text, style))
 
 
 def h(text):
@@ -42,11 +44,11 @@ quality = pd.read_csv(results / "comparison.csv", index_col=0)
 resources = pd.read_csv(results / "resources.csv", index_col=0)
 manifest = json.loads((results / "data_manifest.json").read_text())
 names = {"base": "Base", "grpo_exact": "GRPO exact", "grpo_shaped": "GRPO shaped",
-         "dr_grpo_shaped": "Dr. GRPO"}
+         "dr_grpo_shaped": "GRPO Done Right"}
 
 h("ДЗ 5. RL для вызова функций")
 p("В работе сравниваются три варианта RL для Qwen/Qwen3.5-2B: GRPO с точной наградой, "
-  "GRPO с составной наградой и Dr. GRPO с той же составной наградой. Все запуски начинаются "
+  "GRPO с составной наградой и GRPO Done Right с той же составной наградой. Все запуски начинаются "
   "с исходной модели. Для обучения используется только ToolACE, без SFT.")
 
 h("Данные")
@@ -85,7 +87,7 @@ p("Например, при эталоне weather(city='Paris') такой же
   "Для разбора используется тот же Qwen3CoderToolParser, что и в evaluate.py.")
 p("В первом запуске проверяется, хватит ли награды за полное совпадение. Во втором меняется только награда: "
   "частичные оценки должны давать сигнал и тогда, когда ни один из четырёх ответов не полностью верен. "
-  "В третьем проверяется Dr. GRPO. Он убирает деление advantage на std группы, а сумму по токенам "
+  "В третьем проверяется GRPO Done Right. Он убирает деление advantage на std группы, а сумму по токенам "
   "делит на фиксированную длину 512, умноженную на число ответов. Это две совместные замены нормировки. "
   "У обычного GRPO токены сначала усредняются внутри каждого ответа.")
 p("Каждый запуск обучается 300 шагов на одной A100 80 GB через TRL 1.16.0. "
@@ -101,7 +103,7 @@ p("Batch size - 8, gradient accumulation - 4, по 4 генерации на з�
 p("Обучаемых параметров в каждом варианте 16 819 200. Время с инициализацией trainer: "
   f"GRPO exact - {resources.loc['grpo_exact', 'seconds']:.1f} с, "
   f"GRPO shaped - {resources.loc['grpo_shaped', 'seconds']:.1f} с, "
-  f"Dr. GRPO - {resources.loc['dr_grpo_shaped', 'seconds']:.1f} с. "
+  f"GRPO Done Right - {resources.loc['dr_grpo_shaped', 'seconds']:.1f} с. "
   "Пиковая allocated-память PyTorch - 35.70, 35.50 и 35.73 GiB соответственно, вместе с rollout engine. "
   "Это не замер всей памяти через NVML. По этим временам отдельно сравнивать скорость алгоритмов "
   "не стоит: в них входят инициализация и влияние кэшей.")
@@ -117,7 +119,7 @@ rows = [["Модель", "Overall", "Simple", "Multiple", "Parallel", "Parallel 
 for name, row in quality.iterrows():
     rows.append([names[name]] + [f"{row[col] * 100:.2f}" for col in cols])
 tbl = Table([[Paragraph(escape(str(x)).replace("\n", "<br/>"), cell) for x in row] for row in rows],
-            colWidths=[87, 50, 50, 50, 50, 87, 65], repeatRows=1, hAlign="LEFT")
+            colWidths=[105, 50, 50, 50, 50, 69, 65], repeatRows=1, hAlign="LEFT")
 tbl.setStyle(TableStyle([
     ("GRID", (0, 0), (-1, -1), .5, colors.black),
     ("VALIGN", (0, 0), (-1, -1), "TOP"),
@@ -128,12 +130,12 @@ story.extend([tbl, Spacer(1, 8)])
 p("В таблице значения в процентах. Лучший overall у GRPO shaped: 78.93% против 68.93% у base. "
   "Прирост - 10 п.п., 95% парный bootstrap-интервал [4.80; 15.47] п.п. Для bootstrap сделано 3000 "
   "пересэмплирований внутри семи исходных категорий с сохранением весов overall.")
-p("Для этой задачи предпочтителен GRPO с составной наградой, хотя Dr. GRPO почти не отстаёт: "
+p("Для этой задачи предпочтителен GRPO с составной наградой, хотя GRPO Done Right почти не отстаёт: "
   "разница 0.53 п.п., интервал [-3.07; 4.00] п.п. Уверенного различия между ними здесь нет. "
-  "При этом Dr. GRPO лучше в Irrelevance: 68% против 60%. У точной награды всего +1.60 п.п. к base, "
+  "При этом GRPO Done Right лучше в Irrelevance: 68% против 60%. У точной награды всего +1.60 п.п. к base, "
   "а интервал [-2.93; 6.13] п.п. включает ноль. Base и GRPO exact правильно решили одинаковые "
   "251 из 350 примеров. Разный overall получился из-за разных весов групп.")
-p("Ниже loss и reward всех трёх запусков, сглаженные по 10 шагам. У Dr. GRPO другая нормировка loss, "
+p("Ниже loss и reward всех трёх запусков, сглаженные по 10 шагам. У GRPO Done Right другая нормировка loss, "
   "поэтому меньшие значения сами по себе не означают лучшее обучение.")
 plt.rcParams["font.family"] = font_manager.FontProperties(fname=font_manager.findfont(
     font_manager.FontProperties(family=families))).get_name()
@@ -161,15 +163,15 @@ p("1. У полного совпадения слишком мало проме�
   "их перестановку между несколькими вызовами одной функции; полное совпадение E это различает.")
 p("2. Больше всего помогла замена точной награды на составную: +8.40 п.п. overall при том же GRPO, "
   "интервал [3.87; 13.20] п.п. Веса на старте, данные, seed, LoRA, lr и число шагов одинаковые, "
-  "меняется только награда. У Dr. GRPO одновременно меняются две нормировки, так что их отдельные "
+  "меняется только награда. У GRPO Done Right одновременно меняются две нормировки, так что их отдельные "
   "эффекты по этому запуску разделить нельзя.")
 p("3. Рост reward не всегда совпадает с BFCL. Средняя награда за первые и последние 20 шагов: "
-  "exact - 0.627 и 0.723, shaped - 0.737 и 0.802, Dr. GRPO - 0.717 и 0.826. "
-  "У Dr. GRPO при той же составной награде итоговый reward выше, но BFCL чуть ниже. "
+  "exact - 0.627 и 0.723, shaped - 0.737 и 0.802, GRPO Done Right - 0.717 и 0.826. "
+  "У GRPO Done Right при той же составной награде итоговый reward выше, но BFCL чуть ниже. "
   "При этом разница BFCL мала относительно интервала неопределённости. Награды разных форм "
   "напрямую сравнивать нельзя. Промежуточный BFCL не замерялся.")
 p("На ToolACE validation точный exact match у GRPO exact - 77.60%, у shaped - 73.44%, "
-  "у Dr. GRPO - 75.00%, у base - 63.02%. По BFCL порядок exact и shaped обратный. "
+  "у GRPO Done Right - 75.00%, у base - 63.02%. По BFCL порядок exact и shaped обратный. "
   "Одна из причин - разный состав оценки: в validation треть примеров без вызова, "
   "а у BFCL группа Irrelevance весит одну пятую. Exact лучше отказывается от лишних вызовов "
   "(84% против 60% в BFCL), зато shaped лучше в Parallel (80% против 48%).")
@@ -194,7 +196,7 @@ p("irrelevance_233: на вопрос о переводе $20 в фунты вы
 p("В целом составная награда лучше подошла для нужных вызовов, а точная сильнее смещает модель "
   "к отказу от них. Результат относится к этим 350 примерам и одному seed на вариант. "
   "Bootstrap оценивает разброс тестовой выборки, но не разброс повторных обучений. "
-  "Чтобы надёжнее сравнить GRPO shaped и Dr. GRPO, потребовались бы повторные запуски и отдельный тест.")
+  "Чтобы надёжнее сравнить GRPO shaped и GRPO Done Right, потребовались бы повторные запуски и отдельный тест.")
 
 links = [
     ("модель", "https://huggingface.co/Qwen/Qwen3.5-2B"),
