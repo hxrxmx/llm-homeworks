@@ -1,26 +1,31 @@
 import json
 from html import escape
+from io import BytesIO
 
-import pandas as pd
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 from matplotlib import font_manager
+import pandas as pd
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, PageBreak
+from reportlab.platypus import Image, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 from prepare import ROOT
 
 
+families = ["Arial", "Liberation Sans", "DejaVu Sans"]
 for name, weight in [("text", "normal"), ("bold", "bold")]:
-    path = font_manager.findfont(font_manager.FontProperties(family="DejaVu Sans", weight=weight))
+    path = font_manager.findfont(font_manager.FontProperties(family=families, weight=weight))
     pdfmetrics.registerFont(TTFont(name, path))
 
-body = ParagraphStyle("body", fontName="text", fontSize=9.5, leading=14, spaceAfter=8)
-small = ParagraphStyle("small", parent=body, fontSize=8, leading=11, spaceAfter=4)
-heading = ParagraphStyle("heading", fontName="bold", fontSize=15, leading=20, spaceAfter=12)
-subheading = ParagraphStyle("subheading", fontName="bold", fontSize=10.5, leading=15, spaceBefore=8, spaceAfter=7)
+body = ParagraphStyle("body", fontName="text", fontSize=11, leading=12.65,
+                      spaceAfter=8, allowWidows=0, allowOrphans=0)
+heading = ParagraphStyle("heading", parent=body, fontName="bold", spaceBefore=6, keepWithNext=True)
+cell = ParagraphStyle("cell", parent=body, spaceAfter=0)
 story = []
 
 
@@ -28,187 +33,178 @@ def p(text, style=body):
     story.append(Paragraph(escape(str(text)).replace("\n", "<br/>"), style))
 
 
-def h(text, main=False):
-    p(text, heading if main else subheading)
-
-
-def table(rows, widths):
-    cells = [[Paragraph(escape(str(x)).replace("\n", "<br/>"), small) for x in row] for row in rows]
-    tbl = Table(cells, colWidths=widths, repeatRows=1, hAlign="LEFT")
-    tbl.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#e9eef3")),
-        ("LINEBELOW", (0, 0), (-1, 0), .6, colors.HexColor("#87929e")),
-        ("LINEBELOW", (0, -1), (-1, -1), .4, colors.HexColor("#b2bbc4")),
-        ("VALIGN", (0, 0), (-1, -1), "TOP"),
-        ("LEFTPADDING", (0, 0), (-1, -1), 5), ("RIGHTPADDING", (0, 0), (-1, -1), 5),
-        ("TOPPADDING", (0, 0), (-1, -1), 5), ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
-    ]))
-    story.extend([tbl, Spacer(1, 10)])
-
-
-def figure(path, width):
-    image = Image(str(path))
-    image.drawHeight *= width / image.drawWidth
-    image.drawWidth = width
-    story.extend([image, Spacer(1, 8)])
-
-
-def footer(canvas, doc):
-    canvas.setFont("text", 8)
-    canvas.setFillColor(colors.HexColor("#66717d"))
-    canvas.drawRightString(A4[0] - 42, 25, f"HW5 | {doc.page}")
+def h(text):
+    p(text, heading)
 
 
 results = ROOT / "results"
 quality = pd.read_csv(results / "comparison.csv", index_col=0)
 resources = pd.read_csv(results / "resources.csv", index_col=0)
 manifest = json.loads((results / "data_manifest.json").read_text())
-bootstrap = json.loads((results / "bootstrap.json").read_text())
-experiments = json.loads((ROOT / "experiments.json").read_text())
-manual = json.loads((results / "error_cases.json").read_text())
-notes = json.loads((results / "analysis_notes.json").read_text())
-names = quality.index.tolist()
-best = quality["overall"].idxmax()
+names = {"base": "Base", "grpo_exact": "GRPO exact", "grpo_shaped": "GRPO shaped",
+         "dr_grpo_shaped": "Dr. GRPO"}
 
-h("RL для вызова функций", main=True)
-p("Qwen3.5-2B / ToolACE / учебный срез BFCL")
-p(notes["result"])
-h("1. Данные и подготовка")
-p("Для обучения использован только Team-ACE/ToolACE, ревизия " + manifest["dataset_revision"] + ". "
-  "В исходных данных 11 300 диалогов. Сначала отложены 565 целых диалогов с seed 42, "
-  "затем каждый диалог нарезан на префиксы до ответа ассистента после сообщения пользователя. "
-  "Предыдущие ответы и результаты инструментов сохраняются в истории. Ответы сразу после tool-сообщений "
-  "отдельными целями не становятся.")
-p("Описания функций приведены к JSON Schema, недопустимые символы в именах заменены подчёркиваниями. "
-  "Тот же словарь замен применяется к эталонам. Сохраняется указанное в диалоге текущее время. "
-  "Промпт собирается исходным chat template с enable_thinking=False; сам эталон в промпт не добавляется.")
-table([["Выборка", "Префиксы", "Диалоги", "С вызовом", "Без вызова"]] + [
-    [split, s["rows"], s["dialogs"], s["kinds"]["call"], s["kinds"]["no_call"]]
-    for split, s in manifest["splits"].items()
-], [98, 85, 85, 112, 131])
-p("Исключены 518 диалогов с альтернативным описанием инструментов, 49 с неразбираемым синтаксисом вызова "
-  "и один с нестандартной разметкой ответа. Также убраны 5 пустых целей, 82 длинных префикса и 36 повторов "
-  "промпта. Ограничение длины - 2048 токенов, длинные примеры исключаются целиком. Проверка точного "
-  "нормализованного совпадения вопросов с BFCL пересечений не нашла. Идентификаторы и SHA256 сохранены.")
-figure(results / "figures/eda.png", 511)
-p("Рис. 1. Длины и число эталонных вызовов до фильтрации по длине и удаления повторов. "
-  "Медиана промпта - 701 токен, 95-й процентиль - около 1404. Среди оставленных функций "
-  f"{manifest['unique_tools_kept']} уникальных имён. "
-  "Все эталонные аргументы проверены на соответствие схемам.", small)
+h("ДЗ 5. RL для вызова функций")
+p("В работе сравниваются три варианта RL для Qwen/Qwen3.5-2B: GRPO с точной наградой, "
+  "GRPO с составной наградой и Dr. GRPO с той же составной наградой. Все запуски начинаются "
+  "с исходной модели. Для обучения используется только ToolACE, без SFT.")
 
-story.append(PageBreak())
-h("2. Награды и эксперименты", main=True)
-p("Ответ 1. Точная награда прямо связана с задачей, но у неё нет промежуточного сигнала: одна ошибка в аргументе "
-  "обнуляет весь ответ. Составная награда дополнительно поощряет правильный выбор функции и части аргументов. "
-  "Это помогает различать ответы, когда ни один из четырёх ещё не полностью правильный.")
-p("E - точное равенство мультимножеств полных вызовов, с учётом повторов и без учёта порядка. "
-  "Числа 1 и 1.0 эквивалентны; у строк убираются только крайние пробелы. "
-  "V - корректная разметка и соответствие вызовов схемам. Fₙ - F1 по мультимножеству имён функций. "
-  "Fₐ - F1 по мультимножеству троек (функция, имя аргумента, значение). "
-  "Если аргументов нет ни в эталоне, ни в ответе, Fₐ = Fₙ.")
-p("R_exact = E\nR_shaped = 0.1V + 0.2Fₙ + 0.2Fₐ + 0.5E")
-p("Обрезанный ответ даёт 0 в обеих наградах. Для задания с вызовом пустой ответ, неразобранная разметка или отсутствие вызова дают 0. "
-  "Для задания без вызова обе награды равны 1 только при непустом корректном ответе без инструмента. "
-  "Неполные генерации маскируются в policy loss. Используется тот же Qwen3CoderToolParser, что и в evaluator.")
-p("У Fₐ есть ограничение: при нескольких вызовах одной функции частичная награда не различает перестановку "
-  "аргументов между вызовами. Полное соответствие E при этом остаётся нулевым. "
-  "Для ответов без вызова оценивается решение не вызывать инструмент, а не полезность текста.", small)
-table([["Ответ при эталоне weather(city='Paris')", "R_exact", "R_shaped"],
-       ["weather(city='Paris')", "1.0", "1.0"],
-       ["weather(city='London')", "0.0", "0.3"],
-       ["Незакрытый <tool_call>", "0.0", "0.0"],
-       ["Текст без вызова", "0.0", "0.0"],
-       ["Текст без вызова, когда эталон тоже без вызова", "1.0", "1.0"]], [331, 90, 90])
-p("Это искусственные примеры для проверки функции награды; в обучение они не входят. "
-  "Проверяются также повторы вызовов и разные функции без аргументов.", small)
-p("Ответ 4. Если все четыре награды одинаковы, Rᵢ - mean(R) = 0. "
-  "Advantage равен нулю и при делении на std + 10⁻⁴, и без деления в Dr. GRPO. "
-  "Policy-часть от такого запроса не обучает модель. При β = 0.02 может оставаться градиент KL-штрафа к исходной политике.")
+h("Данные")
+p("В Team-ACE/ToolACE 11 300 диалогов. Сначала 565 целых диалогов отложены в validation, "
+  "а уже потом каждый диалог разбит на префиксы до ответа ассистента. Так части одного разговора "
+  "не попадают одновременно в train и validation. Взяты ответы после сообщений пользователя; "
+  "предыдущие сообщения и результаты инструментов остаются в истории. Эталон нужен только для награды, "
+  "в запрос модели он не добавляется.")
+train, val = manifest["splits"]["train"], manifest["splits"]["validation"]
+p(f"После фильтрации осталось {train['rows']} примера для обучения и {val['rows']} для validation. "
+  f"В train {train['kinds']['call']} примеров с вызовом и {train['kinds']['no_call']} без вызова. "
+  "Медианная длина промпта до фильтрации - 701 токен, 95-й процентиль - около 1404. "
+  "Примеры длиннее 2048 токенов, пустые ответы и повторы промптов убраны.")
+p("Описания функций приведены к JSON Schema. Недопустимые символы в именах заменены подчёркиваниями, "
+  "эти же замены применены к эталонам. Диалоги с неподдерживаемой схемой или неразбираемыми вызовами "
+  "исключены. Аргументы оставленных эталонов проверены по схемам. Точных совпадений вопросов с BFCL "
+  "после нормализации не найдено. Версии данных, состав сплитов и причины исключения сохранены в results.")
+p("Для быстрой проверки на ToolACE взяты 192 отложенных префикса: 64 без вызова, "
+  "64 с одним вызовом и 64 с несколькими. Они одинаковы для всех моделей.")
 
-story.append(PageBreak())
-h("3. Конфигурации и ресурсы", main=True)
-table([["Запуск", "Изменение и гипотеза"]] + [
-    [name, experiments["runs"][name]["hypothesis"]] for name in names if name != "base"
-], [125, 386])
-p(notes["training_setup"])
-p("В GRPO advantage равен (Rᵢ - mean(R)) / (std(R) + 10⁻⁴), а токены усредняются внутри каждого ответа. "
-  "В Dr. GRPO advantage = Rᵢ - mean(R); сумма по токенам делится на фиксированные 512 × число ответов. "
-  "Эти две нормировки меняются вместе. Во всех вариантах ratio считается по токенам и используется "
-  "симметричный clipping 0.2.")
-table([["Запуск", "Шаг", "Время, с", "Обучаемых параметров", "Torch peak allocated, GiB"]] + [
-    [name, int(row["steps"]), f"{row['seconds']:.1f}", f"{int(row['trainable_parameters']):,}".replace(",", " "),
-     f"{row['peak_allocated_gib']:.2f}"] for name, row in resources.iterrows()
-], [125, 45, 75, 140, 126])
-p("Время включает инициализацию trainer и обучение. Память - максимум allocated в PyTorch, "
-  "включая совместный процесс с rollout engine. Замер общего потребления через NVML отдельно не проводился.", small)
-p("Все основные запуски обучаются с исходных весов и имеют одинаковый бюджет шагов и запросов. "
-  "Короткие предварительные проверки по два шага используются только для проверки кода и памяти. "
-  "Их веса не переносятся в основные эксперименты.")
+h("Обучение и награда")
+p("Точная награда равна 1, если совпал весь набор вызовов и аргументов, иначе 0. "
+  "Порядок вызовов не важен, повторы учитываются. Числа 1 и 1.0 считаются равными, "
+  "у строк убираются крайние пробелы. Для составной награды добавлены частичные оценки:")
+p("R_exact = E\nR_shaped = 0.1V + 0.2F_name + 0.2F_args + 0.5E")
+p("Здесь E - точное совпадение, V - корректная разметка и соответствие схемам. "
+  "F_name - F1 по именам функций, F_args - F1 по тройкам «функция, аргумент, значение», "
+  "в обоих случаях с учётом повторов. Если аргументов нет с обеих сторон, F_args = F_name. "
+  "Пустой, обрезанный или неправильно размеченный ответ получает 0. Если вызов нужен, "
+  "а его нет, награда тоже 0. Если вызов не нужен, обе награды дают 1 за непустой "
+  "ответ без вызова. Полезность самого текста при этом не оценивается. "
+  "Обрезанные генерации также исключаются из policy loss.")
+p("Например, при эталоне weather(city='Paris') такой же вызов получает 1 по обеим наградам. "
+  "За weather(city='London') точная награда даёт 0, а составная - 0.3: функция и схема верны, "
+  "но город другой. Незакрытый tool_call даёт 0. Это примеры проверки награды, в обучение они не входят. "
+  "Для разбора используется тот же Qwen3CoderToolParser, что и в evaluate.py.")
+p("В первом запуске проверяется, хватит ли награды за полное совпадение. Во втором меняется только награда: "
+  "частичные оценки должны давать сигнал и тогда, когда ни один из четырёх ответов не полностью верен. "
+  "В третьем проверяется Dr. GRPO. Он убирает деление advantage на std группы, а сумму по токенам "
+  "делит на фиксированную длину 512, умноженную на число ответов. Это две совместные замены нормировки. "
+  "У обычного GRPO токены сначала усредняются внутри каждого ответа.")
+p("Каждый запуск обучается 300 шагов на одной A100 80 GB через TRL 1.16.0. "
+  "Используется LoRA: r=16, alpha=32, dropout=0, проекции q/k/v/o, gate/up/down, "
+  "in_proj_qkv/z/a/b и out_proj. Исходные веса BF16, адаптеры FP32; включены SDPA, TF32 и gradient checkpointing. "
+  "Оптимизатор AdamW fused, lr=2e-5, warmup=10 шагов, затем постоянный lr. "
+  "Weight decay=0.01, gradient clipping=0.3, beta=0.02, clipping ratio=0.2.")
+p("Batch size - 8, gradient accumulation - 4, по 4 генерации на запрос. В сумме это 32 ответа "
+  "на 8 запросов за шаг; num_iterations=1. При генерации temperature=0.8, top_p=0.95, top_k=0, "
+  "максимум 512 новых токенов. Seed данных и Trainer - 42, seed rollout engine - 0, "
+  "как по умолчанию в TRL для одного процесса. Для всех конфигураций заранее выбран последний, "
+  "300-й шаг. Короткие пробные запуски использовались только для проверки кода и памяти.")
+p("Обучаемых параметров в каждом варианте 16 819 200. Время с инициализацией trainer: "
+  f"GRPO exact - {resources.loc['grpo_exact', 'seconds']:.1f} с, "
+  f"GRPO shaped - {resources.loc['grpo_shaped', 'seconds']:.1f} с, "
+  f"Dr. GRPO - {resources.loc['dr_grpo_shaped', 'seconds']:.1f} с. "
+  "Пиковая allocated-память PyTorch - 35.70, 35.50 и 35.73 GiB соответственно, вместе с rollout engine. "
+  "Это не замер всей памяти через NVML. По этим временам отдельно сравнивать скорость алгоритмов "
+  "не стоит: в них входят инициализация и влияние кэшей.")
 
-story.append(PageBreak())
-h("4. Результаты", main=True)
-p("Оценка выполнена одним исходным evaluate.py на неизменённых 350 примерах. "
-  "Токенизатор взят из фиксированной ревизии исходной модели. Для всех запусков: greedy, "
-  "temperature=0, максимум 1024 новых токена, thinking отключён. LoRA перед оценкой объединена с базовыми весами.")
-p("Overall усредняет пять групп с одинаковыми весами. Внутри Multiple и Irrelevance сначала усредняются "
-  "их две категории. Simple, Parallel и Parallel multiple содержат по 50 примеров, Multiple - 150, Irrelevance - 50.")
+h("Результаты")
+p("Модели оценены исходным evaluate.py на тех же 350 примерах BFCL. "
+  "Параметры не менялись: greedy, temperature=0, максимум 1024 новых токена, thinking отключён, seed=42. "
+  "Токенизатор исходный, LoRA перед оценкой объединена с весами модели. Overall - среднее по пяти группам; "
+  "в Multiple и Irrelevance сначала усредняются их две категории. Поэтому overall отличается "
+  "от обычной доли правильных ответов среди всех 350 примеров.")
 cols = ["overall", "simple", "multiple", "parallel", "parallel_multiple", "irrelevance"]
-table([["Запуск", "Overall", "Simple", "Multiple", "Parallel", "Parallel + multiple", "Irrel."]] + [
-    [name] + [f"{quality.loc[name, c] * 100:.2f}" for c in cols] for name in names
-], [117, 64, 60, 64, 62, 80, 64])
-p("Таблица 1. BFCL, значения в процентах.", small)
-table([["RL относительно base", "Разница, п.п.", "95% bootstrap CI, п.п."]] + [
-    [x["run"], f"{x['delta_overall'] * 100:+.2f}", f"[{x['low'] * 100:+.2f}; {x['high'] * 100:+.2f}]"]
-    for x in bootstrap if x["reference"] == "base"
-], [201, 130, 180])
-p("Парный bootstrap: 3000 пересэмплирований внутри семи исходных категорий с сохранением весов overall. "
-  "Интервал отражает неопределённость этой небольшой тестовой выборки. Каждый RL-запуск выполнен с одним seed.", small)
-val_rows = []
-for name in names:
-    val = json.loads((results / name / "validation_metrics.json").read_text())
-    val_rows.append([name, f"{val['all']['exact'] * 100:.2f}", f"{val['all']['shaped']:.3f}",
-                     f"{val['call']['exact'] * 100:.2f}", f"{val['no_call']['exact'] * 100:.2f}"])
-table([["ToolACE validation", "Exact, %", "Shaped", "Call, %", "No call, %"]] + val_rows,
-      [151, 90, 90, 90, 90])
-p("Отдельная диагностическая выборка: 64 префикса без вызова, 64 с одним вызовом и 64 с несколькими. "
-  "Они отложены по диалогам до обучения. Для основной серии заранее выбран последний, 300-й шаг.", small)
-p(notes["strongest_change"])
-p(notes["recommendation"])
+rows = [["Модель", "Overall", "Simple", "Multiple", "Parallel", "Parallel +\nMultiple", "Irrelevance"]]
+for name, row in quality.iterrows():
+    rows.append([names[name]] + [f"{row[col] * 100:.2f}" for col in cols])
+tbl = Table([[Paragraph(escape(str(x)).replace("\n", "<br/>"), cell) for x in row] for row in rows],
+            colWidths=[87, 50, 50, 50, 50, 87, 65], repeatRows=1, hAlign="LEFT")
+tbl.setStyle(TableStyle([
+    ("GRID", (0, 0), (-1, -1), .5, colors.black),
+    ("VALIGN", (0, 0), (-1, -1), "TOP"),
+    ("LEFTPADDING", (0, 0), (-1, -1), 4), ("RIGHTPADDING", (0, 0), (-1, -1), 4),
+    ("TOPPADDING", (0, 0), (-1, -1), 4), ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+]))
+story.extend([tbl, Spacer(1, 8)])
+p("В таблице значения в процентах. Лучший overall у GRPO shaped: 78.93% против 68.93% у base. "
+  "Прирост - 10 п.п., 95% парный bootstrap-интервал [4.80; 15.47] п.п. Для bootstrap сделано 3000 "
+  "пересэмплирований внутри семи исходных категорий с сохранением весов overall.")
+p("Для этой задачи предпочтителен GRPO с составной наградой, хотя Dr. GRPO почти не отстаёт: "
+  "разница 0.53 п.п., интервал [-3.07; 4.00] п.п. Уверенного различия между ними здесь нет. "
+  "При этом Dr. GRPO лучше в Irrelevance: 68% против 60%. У точной награды всего +1.60 п.п. к base, "
+  "а интервал [-2.93; 6.13] п.п. включает ноль. Base и GRPO exact правильно решили одинаковые "
+  "251 из 350 примеров. Разный overall получился из-за разных весов групп.")
+p("Ниже loss и reward всех трёх запусков, сглаженные по 10 шагам. У Dr. GRPO другая нормировка loss, "
+  "поэтому меньшие значения сами по себе не означают лучшее обучение.")
+plt.rcParams["font.family"] = font_manager.FontProperties(fname=font_manager.findfont(
+    font_manager.FontProperties(family=families))).get_name()
+fig, axes = plt.subplots(1, 2, figsize=(7, 2.4))
+for name in list(names)[1:]:
+    history = pd.read_json(ROOT / "runs" / name / "history.jsonl", lines=True)
+    history = history.dropna(subset=["loss"]).drop_duplicates("step", keep="last").sort_values("step")
+    for ax, col in zip(axes, ["loss", "reward"]):
+        ax.plot(history["step"], history[col].rolling(10, min_periods=1).mean(), label=names[name], linewidth=1)
+        ax.set(xlabel="step", ylabel=col)
+        ax.tick_params(labelsize=8)
+axes[0].legend(fontsize=8)
+fig.tight_layout()
+plot = BytesIO()
+fig.savefig(plot, format="png", dpi=180)
+plt.close(fig)
+plot.seek(0)
+story.extend([Image(plot, width=439, height=439 * 2.4 / 7), Spacer(1, 8)])
 
-story.append(PageBreak())
-h("5. Ход обучения", main=True)
-figure(results / "figures/training.png", 511)
-p("Рис. 2. Для каждого запуска показаны policy loss с KL и сырая награда. Бледная линия - отдельные шаги, "
-  "сплошная - среднее по 10 шагам. У GRPO и Dr. GRPO разная нормировка loss, его абсолютные значения напрямую не сравниваются.", small)
-p(notes["reward_vs_bfcl"])
+h("Ответы на вопросы")
+p("1. У полного совпадения слишком мало промежуточного сигнала: "
+  "одна ошибка в аргументе обнуляет ответ. Составная награда позволяет поощрить хотя бы правильную "
+  "функцию и часть аргументов. Это согласуется с логами: доля групп с одинаковыми наградами "
+  "у exact - 82.75%, у shaped - 75.54%. При этом частичная оценка аргументов не различает "
+  "их перестановку между несколькими вызовами одной функции; полное совпадение E это различает.")
+p("2. Больше всего помогла замена точной награды на составную: +8.40 п.п. overall при том же GRPO, "
+  "интервал [3.87; 13.20] п.п. Веса на старте, данные, seed, LoRA, lr и число шагов одинаковые, "
+  "меняется только награда. У Dr. GRPO одновременно меняются две нормировки, так что их отдельные "
+  "эффекты по этому запуску разделить нельзя.")
+p("3. Рост reward не всегда совпадает с BFCL. Средняя награда за первые и последние 20 шагов: "
+  "exact - 0.627 и 0.723, shaped - 0.737 и 0.802, Dr. GRPO - 0.717 и 0.826. "
+  "У Dr. GRPO при той же составной награде итоговый reward выше, но BFCL чуть ниже. "
+  "При этом разница BFCL мала относительно интервала неопределённости. Награды разных форм "
+  "напрямую сравнивать нельзя. Промежуточный BFCL не замерялся.")
+p("На ToolACE validation точный exact match у GRPO exact - 77.60%, у shaped - 73.44%, "
+  "у Dr. GRPO - 75.00%, у base - 63.02%. По BFCL порядок exact и shaped обратный. "
+  "Одна из причин - разный состав оценки: в validation треть примеров без вызова, "
+  "а у BFCL группа Irrelevance весит одну пятую. Exact лучше отказывается от лишних вызовов "
+  "(84% против 60% в BFCL), зато shaped лучше в Parallel (80% против 48%).")
+p("4. Если все ответы на запрос получили одинаковую награду, R_i - mean(R) = 0 и advantage равен нулю. "
+  "Policy loss от этой группы не даёт обучающего сигнала. При beta=0.02 при этом может оставаться "
+  "градиент KL-штрафа к исходной модели.")
+p("5. У лучшего варианта GRPO shaped остались ошибки и в аргументах, и в решении о вызове. "
+  "Пять примеров из predictions.jsonl:")
+p("simple_150: для вклада под 3% в calculate_roi передано annual_interest_rate=3 вместо 0.03. "
+  "Функция правильная, но процент не переведён в долю.")
+p("multiple_76: на запрос о бронзовой скульптуре лошади модель перечисляет материалы текстом. "
+  "Вызов sculpture.create_custom пропущен. Сам запрос можно прочитать и как вопрос о материалах, "
+  "но эталон BFCL ожидает создание скульптуры.")
+p("parallel_181: требовались цены Apple за неделю, Microsoft за две, Amazon за три и Tesla за месяц. "
+  "Модель сделала четыре get_stock_prices, но в каждом передала сразу все компании. "
+  "Число вызовов верно, соответствие компаний периодам потеряно.")
+p("parallel_multiple_67: в math.roots.polynomial передан массив [6, -3, 2, -1, 1], "
+  "а checker требует float: [6.0, -3.0, 2.0, -1.0, 1.0]. Числа по смыслу те же, но ответ отклонён. "
+  "Это пример расхождения reward и BFCL: числовая нормализация в награде такую разницу не учитывает.")
+p("irrelevance_233: на вопрос о переводе $20 в фунты вызвана weather_in_location для Лондона. "
+  "Доступен только инструмент погоды, так что это лишний вызов: подходящей функции для запроса нет.")
+p("В целом составная награда лучше подошла для нужных вызовов, а точная сильнее смещает модель "
+  "к отказу от них. Результат относится к этим 350 примерам и одному seed на вариант. "
+  "Bootstrap оценивает разброс тестовой выборки, но не разброс повторных обучений. "
+  "Чтобы надёжнее сравнить GRPO shaped и Dr. GRPO, потребовались бы повторные запуски и отдельный тест.")
 
-story.append(PageBreak())
-h("6. Оставшиеся ошибки", main=True)
-p("Ответ 5. Ниже разобраны ошибки лучшего наблюдаемого варианта: " + best + ". "
-  "Полные ответы и результаты AST-проверки сохранены в predictions.jsonl. "
-  "Запросы сокращены, вызовы показаны после разбора parser; текстовые ответы приведены фрагментами.")
-for i, case in enumerate(manual):
-    if i == 3:
-        story.append(PageBreak())
-        h("Оставшиеся ошибки: продолжение", main=True)
-    h(f"{case['id']} / {case['category']}")
-    p("Запрос (кратко): " + case.get("question_summary", case["question"]), small)
-    p("Ожидалось: " + case["expected"], small)
-    p("Получено: " + case["response_excerpt"], small)
-    p(case["analysis"])
-h("Ограничения и итог")
-p(notes["limitations"])
-p(notes["conclusion"])
-h("Материалы")
-for label, url in [
-    ("Модель и её описание", "https://huggingface.co/Qwen/Qwen3.5-2B"),
+links = [
+    ("модель", "https://huggingface.co/Qwen/Qwen3.5-2B"),
     ("ToolACE", "https://huggingface.co/datasets/Team-ACE/ToolACE"),
-    ("TRL GRPOTrainer 1.16.0", "https://github.com/huggingface/trl/blob/v1.16.0/trl/trainer/grpo_trainer.py"),
-    ("Условие задания", "https://drive.google.com/file/d/1GCFSSygmlVZvdhiRckeBrAcYDKxhLiHv/view"),
-]:
-    story.append(Paragraph(f'<link href="{url}" color="#245b8c">{label}</link>', small))
-
-doc = SimpleDocTemplate(str(ROOT / "report.pdf"), pagesize=A4, rightMargin=42, leftMargin=42,
-                        topMargin=40, bottomMargin=42, title="HW5: RL для вызова функций", author="hxrxmx")
-doc.build(story, onFirstPage=footer, onLaterPages=footer)
+    ("TRL", "https://github.com/huggingface/trl/blob/v1.16.0/trl/trainer/grpo_trainer.py"),
+    ("условие", "https://drive.google.com/file/d/1GCFSSygmlVZvdhiRckeBrAcYDKxhLiHv/view"),
+]
+story.append(Paragraph("Материалы: " + ", ".join(f'<link href="{url}">{label}</link>'
+                                                for label, url in links) + ".", body))
+doc = SimpleDocTemplate(str(ROOT / "report.pdf"), pagesize=A4, leftMargin=72, rightMargin=72,
+                        topMargin=72, bottomMargin=72, title="ДЗ 5. RL для вызова функций", author="hxrxmx")
+doc.build(story)
 print(ROOT / "report.pdf")
