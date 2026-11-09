@@ -1,0 +1,9 @@
+data/
+checkpoints/
+cache/
+__pycache__/
+*.log
+runs/**/checkpoint-*/
+runs/smoke*/
+results/smoke*/
+runs/*/README.md

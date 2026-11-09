@@ -1,0 +1,2802 @@
+[
+  {
+    "id": "0_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "0_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "17_5",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "17_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "22_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "27_1",
+    "reason": "empty_text"
+  },
+  {
+    "id": "30_1",
+    "reason": "empty_text"
+  },
+  {
+    "id": "32_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "42_5",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "42_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "46_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "46_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "47_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "96_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "96_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "100_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "104_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "107_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "113_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "130_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "142_5",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "142_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "142_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "154_5",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "154_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "154_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "162_1",
+    "reason": "empty_text"
+  },
+  {
+    "id": "163_1",
+    "reason": "empty_text"
+  },
+  {
+    "dialog_id": 175,
+    "reason": "SyntaxError: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "id": "176_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "176_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "180_5",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "180_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "180_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "184_5",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "184_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "184_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "198_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "202_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "218_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "218_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "224_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "235_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "246_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "251_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "263_1",
+    "reason": "empty_text"
+  },
+  {
+    "id": "279_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "284_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "289_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "289_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "311_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "316_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "316_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "322_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "330_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "335_5",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "335_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "339_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "344_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "345_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "348_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "363_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "364_5",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "364_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "367_5",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "367_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "379_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "427_5",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "427_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "429_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "431_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "dialog_id": 448,
+    "reason": "ValueError: unsupported_reference_markup"
+  },
+  {
+    "id": "449_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "449_9",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "452_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "452_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "453_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "459_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "474_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "479_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "483_5",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "483_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "483_11",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "496_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "497_7",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "dialog_id": 800,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 801,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 802,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 803,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 804,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 805,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 806,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 807,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 808,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 809,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 810,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 811,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 812,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 813,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 814,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 815,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 816,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 817,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 818,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 819,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 820,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 821,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 822,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 823,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 824,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 825,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 826,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 827,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 828,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 829,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 830,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 831,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 832,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 833,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 834,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 835,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 836,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 837,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 838,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 839,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 840,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 841,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 842,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 843,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 844,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 845,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 846,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 847,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 848,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 849,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 850,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 851,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 852,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 853,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 854,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 855,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 856,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 857,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 858,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 859,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 860,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 861,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 862,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 863,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 864,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 865,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 866,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 867,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 868,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 869,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 870,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 871,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 872,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 873,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 874,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 875,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 876,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 877,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 878,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 879,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 880,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 881,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 882,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 883,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 884,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 885,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 886,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 887,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 888,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 889,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 890,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 891,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 892,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 893,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 894,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 895,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 896,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 897,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 898,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 899,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 900,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 901,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 902,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 903,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 904,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 905,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 906,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 907,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 908,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 909,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 910,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 911,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 912,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 913,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 914,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 915,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 916,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 917,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 918,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 919,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 920,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 921,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 922,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 923,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 924,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 925,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 926,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 927,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 928,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 929,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 930,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 931,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 932,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 933,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 934,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 935,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 936,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 937,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 938,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 939,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 940,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 941,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 942,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 943,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 944,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 945,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 946,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 947,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 948,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 949,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 950,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 951,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 952,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 953,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 954,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 955,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 956,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 957,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 958,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 959,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 960,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 961,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 962,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 963,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 964,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 965,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 966,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 967,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 968,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 969,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 970,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 971,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 972,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 973,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 974,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 975,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 976,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 977,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 978,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 979,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 980,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 981,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 982,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 983,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 984,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 985,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 986,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 987,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 988,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 989,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 990,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 991,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 992,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 993,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 994,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 995,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 996,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 997,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 998,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 999,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1000,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1001,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1002,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1003,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1004,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1005,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1006,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1007,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1008,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1009,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1010,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1011,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1012,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1013,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1014,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1015,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1016,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1017,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1018,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1019,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1020,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1021,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1022,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1023,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1024,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1025,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1026,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1027,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1028,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1029,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1030,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1031,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1032,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1033,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1034,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1035,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1036,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1037,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1038,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1039,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1040,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1041,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1042,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1043,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1044,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1045,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1046,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1047,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1048,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1049,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1050,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1051,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1052,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1053,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1054,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1055,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1056,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1057,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1058,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1059,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1060,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1061,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1062,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1063,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1064,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1065,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1066,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1067,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1068,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1069,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1070,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1071,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1072,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1073,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1074,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1075,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1076,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1077,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1078,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1079,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1080,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1081,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1082,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1083,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1084,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1085,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1086,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1087,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1088,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1089,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1090,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1091,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1092,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1093,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1094,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1095,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1096,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1097,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1098,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1099,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1100,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1101,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1102,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1103,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1104,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1105,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1106,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1107,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1108,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1109,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1110,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1111,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1112,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1113,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1114,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1115,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1116,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1117,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1118,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1119,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1120,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1121,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1122,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1123,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1124,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1125,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1126,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1127,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1128,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1129,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1130,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1131,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1132,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1133,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1134,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1135,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1136,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1137,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1138,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1139,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1140,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1141,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1142,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1143,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1144,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1145,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1146,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1147,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1148,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1149,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1150,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1151,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1152,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1153,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1154,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1155,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1156,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1157,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1158,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1159,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1160,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1161,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1162,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1163,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1164,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1165,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1166,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1167,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1168,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1169,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1170,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1171,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1172,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1173,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1174,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1175,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1176,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1177,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1178,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1179,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1180,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1181,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1182,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1183,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1184,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1185,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1186,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1187,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1188,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1189,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1190,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1191,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1192,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1193,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1194,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1195,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1196,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1197,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1198,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1199,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1200,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1201,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1202,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1203,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1204,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1205,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1206,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1207,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1208,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1209,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1210,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1211,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1212,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1213,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1214,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1215,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1216,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1217,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1218,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1219,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1220,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1221,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1222,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1223,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1224,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1225,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1226,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1227,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1228,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1229,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1230,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1231,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1232,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1233,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1234,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1235,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1236,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1237,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1238,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1239,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1240,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1241,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1242,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1243,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1244,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1245,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1246,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1247,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1248,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1249,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1250,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1251,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1252,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1253,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1254,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1255,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1256,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1257,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1258,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1259,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1260,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1261,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1262,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1263,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1264,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1265,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1266,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1267,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1268,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1269,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1270,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1271,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1272,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1273,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1274,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1275,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1276,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1277,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1278,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1279,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1280,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1281,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1282,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1283,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1284,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1285,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1286,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1287,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1288,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1289,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1290,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1291,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1292,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1293,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1294,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1295,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1296,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1297,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1298,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1299,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1326,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 1370,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 1428,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 1554,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "id": "1570_1",
+    "reason": "duplicate_prompt",
+    "first": "71_1"
+  },
+  {
+    "id": "1869_1",
+    "reason": "duplicate_prompt",
+    "first": "48_1"
+  },
+  {
+    "dialog_id": 1943,
+    "reason": "SyntaxError: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 1950,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 1999,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "id": "2088_1",
+    "reason": "duplicate_prompt",
+    "first": "241_1"
+  },
+  {
+    "dialog_id": 2178,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "id": "2261_1",
+    "reason": "duplicate_prompt",
+    "first": "220_1"
+  },
+  {
+    "id": "2312_1",
+    "reason": "duplicate_prompt",
+    "first": "331_1"
+  },
+  {
+    "dialog_id": 2370,
+    "reason": "SyntaxError: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 2521,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 2524,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 2532,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "id": "2538_1",
+    "reason": "duplicate_prompt",
+    "first": "197_1"
+  },
+  {
+    "dialog_id": 2571,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 2618,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 2724,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 2737,
+    "reason": "SyntaxError: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 3193,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 3434,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 3538,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "id": "3578_1",
+    "reason": "duplicate_prompt",
+    "first": "224_1"
+  },
+  {
+    "id": "3724_1",
+    "reason": "duplicate_prompt",
+    "first": "156_1"
+  },
+  {
+    "id": "3893_1",
+    "reason": "duplicate_prompt",
+    "first": "46_1"
+  },
+  {
+    "dialog_id": 3910,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 4009,
+    "reason": "SyntaxError: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)"
+  },
+  {
+    "id": "4032_1",
+    "reason": "duplicate_prompt",
+    "first": "296_1"
+  },
+  {
+    "dialog_id": 4134,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 4157,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 4161,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 4288,
+    "reason": "SyntaxError: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)"
+  },
+  {
+    "id": "4412_1",
+    "reason": "duplicate_prompt",
+    "first": "332_1"
+  },
+  {
+    "id": "4418_1",
+    "reason": "duplicate_prompt",
+    "first": "109_1"
+  },
+  {
+    "dialog_id": 4544,
+    "reason": "SyntaxError: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 4655,
+    "reason": "SyntaxError: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 4690,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 5091,
+    "reason": "SyntaxError: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 5191,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 5326,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 5363,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 5484,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 5709,
+    "reason": "SyntaxError: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)"
+  },
+  {
+    "id": "5775_1",
+    "reason": "duplicate_prompt",
+    "first": "256_1"
+  },
+  {
+    "dialog_id": 5816,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 5848,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "id": "5965_1",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "6003_1",
+    "reason": "duplicate_prompt",
+    "first": "338_1"
+  },
+  {
+    "dialog_id": 6033,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "id": "6038_1",
+    "reason": "duplicate_prompt",
+    "first": "119_1"
+  },
+  {
+    "id": "6153_1",
+    "reason": "duplicate_prompt",
+    "first": "168_1"
+  },
+  {
+    "dialog_id": 6249,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 6310,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 6417,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 6577,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 6686,
+    "reason": "SyntaxError: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)"
+  },
+  {
+    "id": "6777_1",
+    "reason": "duplicate_prompt",
+    "first": "209_1"
+  },
+  {
+    "dialog_id": 6781,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 6816,
+    "reason": "SyntaxError: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 6972,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 7073,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "id": "7268_1",
+    "reason": "duplicate_prompt",
+    "first": "29_1"
+  },
+  {
+    "id": "7275_1",
+    "reason": "duplicate_prompt",
+    "first": "26_1"
+  },
+  {
+    "id": "7400_1",
+    "reason": "duplicate_prompt",
+    "first": "460_1"
+  },
+  {
+    "dialog_id": 7447,
+    "reason": "SyntaxError: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 7471,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "id": "7475_1",
+    "reason": "duplicate_prompt",
+    "first": "215_1"
+  },
+  {
+    "dialog_id": 7590,
+    "reason": "SyntaxError: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)"
+  },
+  {
+    "id": "7782_1",
+    "reason": "duplicate_prompt",
+    "first": "252_1"
+  },
+  {
+    "dialog_id": 7849,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 7936,
+    "reason": "SyntaxError: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "id": "8088_1",
+    "reason": "duplicate_prompt",
+    "first": "294_1"
+  },
+  {
+    "dialog_id": 8190,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 8240,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "id": "8253_1",
+    "reason": "duplicate_prompt",
+    "first": "182_1"
+  },
+  {
+    "id": "8255_1",
+    "reason": "duplicate_prompt",
+    "first": "89_1"
+  },
+  {
+    "id": "8257_1",
+    "reason": "duplicate_prompt",
+    "first": "298_1"
+  },
+  {
+    "dialog_id": 8276,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 8406,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "id": "8443_1",
+    "reason": "duplicate_prompt",
+    "first": "82_1"
+  },
+  {
+    "id": "8589_1",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "dialog_id": 8651,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "id": "8798_1",
+    "reason": "duplicate_prompt",
+    "first": "3187_1"
+  },
+  {
+    "dialog_id": 8996,
+    "reason": "SyntaxError: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)"
+  },
+  {
+    "id": "9110_1",
+    "reason": "duplicate_prompt",
+    "first": "184_1"
+  },
+  {
+    "id": "9192_1",
+    "reason": "duplicate_prompt",
+    "first": "420_1"
+  },
+  {
+    "dialog_id": 9372,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 9581,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "id": "9617_1",
+    "reason": "duplicate_prompt",
+    "first": "51_1"
+  },
+  {
+    "id": "9644_1",
+    "reason": "duplicate_prompt",
+    "first": "7069_1"
+  },
+  {
+    "dialog_id": 9806,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 9874,
+    "reason": "SyntaxError: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)"
+  },
+  {
+    "id": "9878_1",
+    "reason": "duplicate_prompt",
+    "first": "346_1"
+  },
+  {
+    "id": "9880_1",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "9930_1",
+    "reason": "duplicate_prompt",
+    "first": "310_1"
+  },
+  {
+    "id": "9972_1",
+    "reason": "prompt_over_2048"
+  },
+  {
+    "id": "10078_1",
+    "reason": "duplicate_prompt",
+    "first": "4915_1"
+  },
+  {
+    "dialog_id": 10341,
+    "reason": "SyntaxError: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 10913,
+    "reason": "ValueError: noncanonical_tool_schema"
+  },
+  {
+    "dialog_id": 10995,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "dialog_id": 11023,
+    "reason": "SyntaxError: expression cannot contain assignment, perhaps you meant \"==\"? (<unknown>, line 1)"
+  },
+  {
+    "id": "11121_1",
+    "reason": "duplicate_prompt",
+    "first": "495_1"
+  },
+  {
+    "dialog_id": 11275,
+    "reason": "ValueError: noncanonical_tool_schema"
+  }
+]

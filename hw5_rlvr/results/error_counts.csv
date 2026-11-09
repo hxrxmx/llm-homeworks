@@ -1,0 +1,5 @@
+run,truncated,empty,extra_call_irrelevance,missing_call,other
+base,5,0,16,33,45
+grpo_exact,2,0,6,48,43
+grpo_shaped,3,0,17,5,47
+dr_grpo_shaped,3,0,13,9,47

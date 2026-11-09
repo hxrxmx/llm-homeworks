@@ -1,0 +1,29 @@
+{
+  "model": "Qwen/Qwen3.5-2B",
+  "model_revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+  "dataset": "Team-ACE/ToolACE",
+  "dataset_revision": "6bda777c88d21e5a204703c1ee45597a8fa4f734",
+  "seed": 42,
+  "planned_steps": 300,
+  "checkpoint_rule": "Фиксированный бюджет: последний шаг каждого запуска. BFCL не используется для выбора шага.",
+  "runs": {
+    "grpo_exact": {
+      "hypothesis": "Точная награда напрямую поощряет правильный полный набор вызовов, но может давать мало различающихся наград внутри группы.",
+      "reward": "exact",
+      "loss_type": "grpo",
+      "scale_rewards": "group"
+    },
+    "grpo_shaped": {
+      "hypothesis": "Частичная награда за функцию и аргументы даст сигнал даже там, где ни один ответ ещё не полностью правильный. Меняется только награда.",
+      "reward": "shaped",
+      "loss_type": "grpo",
+      "scale_rewards": "group"
+    },
+    "dr_grpo_shaped": {
+      "hypothesis": "Dr. GRPO уберёт зависимость веса токена от длины ответа и масштабирование по std группы. Проверяется весь этот вариант нормировки при той же составной награде.",
+      "reward": "shaped",
+      "loss_type": "dr_grpo",
+      "scale_rewards": "none"
+    }
+  }
+}

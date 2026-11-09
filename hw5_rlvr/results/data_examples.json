@@ -1,0 +1,373 @@
+[
+  {
+    "id": "3063_1",
+    "dialog_id": 3063,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Current time: 2022-02-15 19:46:05."
+      },
+      {
+        "role": "user",
+        "content": "I'm interested in renting an office space through TopSpaces agency. Can you help me find what's available?"
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "Get_Company_Contacts",
+          "description": "Returns a list of contact persons (including email addresses) at a given company.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "domain": {
+                "description": "The company domain for which you want to look up contacts for (e.g. unilever.com). Providing a URL works as well, we will then parse the domain on our end.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "domain"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "Get_Agency_Listings",
+          "description": "Retrieve a list of listings belonging to a specific agency",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "agencySlug": {
+                "description": "The slug of the agency",
+                "type": "string"
+              },
+              "categorySlug": {
+                "description": "The slug of the category (optional)",
+                "type": "string"
+              },
+              "sort": {
+                "description": "The sorting criteria (optional)",
+                "type": "string"
+              },
+              "completionStatus": {
+                "description": "The completion status of the listings (optional)",
+                "type": "string"
+              },
+              "rentFrequency": {
+                "description": "The rent frequency of the listings (optional)",
+                "type": "string"
+              },
+              "purpose": {
+                "description": "The purpose of the listings (optional)",
+                "type": "string"
+              },
+              "page": {
+                "description": "The page number for pagination (optional)",
+                "type": "number"
+              },
+              "hitsPerPage": {
+                "description": "The number of hits per page for pagination (optional)",
+                "type": "number"
+              },
+              "lang": {
+                "description": "The language of the response (optional)",
+                "type": "string"
+              }
+            },
+            "required": [
+              "agencySlug"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "Get_House_Prices_for_a_Specific_Property",
+          "description": "Retrieve detailed house prices for a specific property using the UPRN (Unique Property Reference Number) from Zoopla.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "uprn": {
+                "description": "Unique Property Reference Number from Zoopla",
+                "type": "string"
+              }
+            },
+            "required": [
+              "uprn"
+            ]
+          }
+        }
+      }
+    ],
+    "reference": [
+      {
+        "name": "Get_Agency_Listings",
+        "arguments": {
+          "agencySlug": "topspaces"
+        }
+      }
+    ],
+    "reference_text": "[Get Agency Listings(agencySlug=\"topspaces\")]",
+    "kind": "call",
+    "prompt": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"type\": \"function\", \"function\": {\"name\": \"Get_Company_Contacts\", \"description\": \"Returns a list of contact persons (including email addresses) at a given company.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"domain\": {\"description\": \"The company domain for which you want to look up contacts for (e.g. unilever.com). Providing a URL works as well, we will then parse the domain on our end.\", \"type\": \"string\"}}, \"required\": [\"domain\"]}}}\n{\"type\": \"function\", \"function\": {\"name\": \"Get_Agency_Listings\", \"description\": \"Retrieve a list of listings belonging to a specific agency\", \"parameters\": {\"type\": \"object\", \"properties\": {\"agencySlug\": {\"description\": \"The slug of the agency\", \"type\": \"string\"}, \"categorySlug\": {\"description\": \"The slug of the category (optional)\", \"type\": \"string\"}, \"sort\": {\"description\": \"The sorting criteria (optional)\", \"type\": \"string\"}, \"completionStatus\": {\"description\": \"The completion status of the listings (optional)\", \"type\": \"string\"}, \"rentFrequency\": {\"description\": \"The rent frequency of the listings (optional)\", \"type\": \"string\"}, \"purpose\": {\"description\": \"The purpose of the listings (optional)\", \"type\": \"string\"}, \"page\": {\"description\": \"The page number for pagination (optional)\", \"type\": \"number\"}, \"hitsPerPage\": {\"description\": \"The number of hits per page for pagination (optional)\", \"type\": \"number\"}, \"lang\": {\"description\": \"The language of the response (optional)\", \"type\": \"string\"}}, \"required\": [\"agencySlug\"]}}}\n{\"type\": \"function\", \"function\": {\"name\": \"Get_House_Prices_for_a_Specific_Property\", \"description\": \"Retrieve detailed house prices for a specific property using the UPRN (Unique Property Reference Number) from Zoopla.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"uprn\": {\"description\": \"Unique Property Reference Number from Zoopla\", \"type\": \"string\"}}, \"required\": [\"uprn\"]}}}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT>\n\nCurrent time: 2022-02-15 19:46:05.<|im_end|>\n<|im_start|>user\nI'm interested in renting an office space through TopSpaces agency. Can you help me find what's available?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "prompt_tokens": 719
+  },
+  {
+    "id": "6455_1",
+    "dialog_id": 6455,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Current time: 2021-06-27 00:19:23."
+      },
+      {
+        "role": "user",
+        "content": "I need to find out the available technology options for non-profit organizations in the United States, Canada, and Australia. All organizations are in the healthcare sector with a medium budget and need technology for data management."
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "getAvailableTechnology",
+          "description": "Retrieve the available technology options for non-profit organizations",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "country": {
+                "type": "string",
+                "description": "The country for which you want to get the technology options (e.g., United States, Canada, Australia)"
+              },
+              "budget": {
+                "type": "string",
+                "description": "The budget range for technology implementation (e.g., low, medium, high)"
+              },
+              "organization_type": {
+                "type": "string",
+                "description": "The type of non-profit organization (e.g., education, healthcare, environment)"
+              },
+              "specific_needs": {
+                "type": "string",
+                "description": "Specific technology needs of the organization (e.g., communication, data management, website development)"
+              }
+            },
+            "required": [
+              "country"
+            ]
+          }
+        }
+      }
+    ],
+    "reference": [
+      {
+        "name": "getAvailableTechnology",
+        "arguments": {
+          "country": "United States",
+          "budget": "medium",
+          "organization_type": "healthcare",
+          "specific_needs": "data management"
+        }
+      },
+      {
+        "name": "getAvailableTechnology",
+        "arguments": {
+          "country": "Canada",
+          "budget": "medium",
+          "organization_type": "healthcare",
+          "specific_needs": "data management"
+        }
+      },
+      {
+        "name": "getAvailableTechnology",
+        "arguments": {
+          "country": "Australia",
+          "budget": "medium",
+          "organization_type": "healthcare",
+          "specific_needs": "data management"
+        }
+      }
+    ],
+    "reference_text": "[getAvailableTechnology(country=\"United States\", budget=\"medium\", organization_type=\"healthcare\", specific_needs=\"data management\"), getAvailableTechnology(country=\"Canada\", budget=\"medium\", organization_type=\"healthcare\", specific_needs=\"data management\"), getAvailableTechnology(country=\"Australia\", budget=\"medium\", organization_type=\"healthcare\", specific_needs=\"data management\")]",
+    "kind": "call",
+    "prompt": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"type\": \"function\", \"function\": {\"name\": \"getAvailableTechnology\", \"description\": \"Retrieve the available technology options for non-profit organizations\", \"parameters\": {\"type\": \"object\", \"properties\": {\"country\": {\"type\": \"string\", \"description\": \"The country for which you want to get the technology options (e.g., United States, Canada, Australia)\"}, \"budget\": {\"type\": \"string\", \"description\": \"The budget range for technology implementation (e.g., low, medium, high)\"}, \"organization_type\": {\"type\": \"string\", \"description\": \"The type of non-profit organization (e.g., education, healthcare, environment)\"}, \"specific_needs\": {\"type\": \"string\", \"description\": \"Specific technology needs of the organization (e.g., communication, data management, website development)\"}}, \"required\": [\"country\"]}}}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT>\n\nCurrent time: 2021-06-27 00:19:23.<|im_end|>\n<|im_start|>user\nI need to find out the available technology options for non-profit organizations in the United States, Canada, and Australia. All organizations are in the healthcare sector with a medium budget and need technology for data management.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "prompt_tokens": 462
+  },
+  {
+    "id": "2830_1",
+    "dialog_id": 2830,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Current time: 2025-04-05 04:48:42."
+      },
+      {
+        "role": "user",
+        "content": "Role definition:\n Inquirer: A user who raises an inquiry.\n Response assistant: Communicates with the inquirer and provides answers and solutions.\n\n Historical dialog data is as follows:\nInquirer: I'm coordinating a project and need to send out an update email. Could you find out who the owners of the group Project-A are, and also check if I have saved the latest draft of the update in my Drive folder \"Project A Updates\"?\nResponse assistant: For the group owners, could you please provide the unique identifier (GroupId) for Project-A? Additionally, to check your Drive folder, I need the Drive ID and the specific Item ID of the \"Project A Updates\" folder.\nInquirer: The GroupId for Project-A is \"GRP12345\" and for the Drive folder, the Drive ID is \"0B1234DriveID\" and the \"Project A Updates\" folder Item ID is \"0B12345FolderID\".\n\n Please continue your answer given the historical dialog. Your role is the Response assistant."
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "GetDriveChildItems",
+          "description": "Retrieves the child items of a specified drive item.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "DriveId": {
+                "description": "The ID of the drive item to retrieve child items for.",
+                "type": "string"
+              },
+              "ItemId": {
+                "description": "The ID of the item within the drive to retrieve child items for.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "DriveId",
+              "ItemId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "getAllTemplates",
+          "description": "Retrieve a list of email templates in a paginated format, with optional filtering and sorting capabilities.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "since": {
+                "description": "Filter by created at after the given timestamp",
+                "type": "string"
+              },
+              "sort": {
+                "description": "Optional createdAt sort direction ASC or DESC",
+                "type": "string",
+                "enum": [
+                  "ASC",
+                  "DESC"
+                ]
+              },
+              "page": {
+                "description": "Optional page index in list pagination",
+                "type": "integer",
+                "minimum": 0
+              },
+              "size": {
+                "description": "Optional page size in list pagination",
+                "type": "integer",
+                "minimum": 1
+              },
+              "before": {
+                "description": "Filter by created at before the given timestamp",
+                "type": "string"
+              }
+            },
+            "required": []
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "Get_Test_Mail",
+          "description": "Retrieve a test email by its ID",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "The ID of the test email to retrieve",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "GetTeam",
+          "description": "Retrieve team information by team ID",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "TeamId": {
+                "description": "Unique identifier of the team",
+                "type": "string"
+              }
+            },
+            "required": [
+              "TeamId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "getInbox",
+          "description": "Retrieves information about an email inbox, including its email address and ID.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "inboxId": {
+                "description": "The ID of the inbox to retrieve information about",
+                "type": "string"
+              }
+            },
+            "required": [
+              "inboxId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "GetGroupOwners",
+          "description": "Retrieve a list of owners for a specified group.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "GroupId": {
+                "description": "The unique identifier of the group for which to retrieve the owners.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "GroupId"
+            ]
+          }
+        }
+      }
+    ],
+    "reference": [
+      {
+        "name": "GetGroupOwners",
+        "arguments": {
+          "GroupId": "GRP12345"
+        }
+      },
+      {
+        "name": "GetDriveChildItems",
+        "arguments": {
+          "DriveId": "0B1234DriveID",
+          "ItemId": "0B12345FolderID"
+        }
+      }
+    ],
+    "reference_text": "[GetGroupOwners(GroupId=\"GRP12345\"), GetDriveChildItems(DriveId=\"0B1234DriveID\", ItemId=\"0B12345FolderID\")]",
+    "kind": "call",
+    "prompt": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"type\": \"function\", \"function\": {\"name\": \"GetDriveChildItems\", \"description\": \"Retrieves the child items of a specified drive item.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"DriveId\": {\"description\": \"The ID of the drive item to retrieve child items for.\", \"type\": \"string\"}, \"ItemId\": {\"description\": \"The ID of the item within the drive to retrieve child items for.\", \"type\": \"string\"}}, \"required\": [\"DriveId\", \"ItemId\"]}}}\n{\"type\": \"function\", \"function\": {\"name\": \"getAllTemplates\", \"description\": \"Retrieve a list of email templates in a paginated format, with optional filtering and sorting capabilities.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"since\": {\"description\": \"Filter by created at after the given timestamp\", \"type\": \"string\"}, \"sort\": {\"description\": \"Optional createdAt sort direction ASC or DESC\", \"type\": \"string\", \"enum\": [\"ASC\", \"DESC\"]}, \"page\": {\"description\": \"Optional page index in list pagination\", \"type\": \"integer\", \"minimum\": 0}, \"size\": {\"description\": \"Optional page size in list pagination\", \"type\": \"integer\", \"minimum\": 1}, \"before\": {\"description\": \"Filter by created at before the given timestamp\", \"type\": \"string\"}}, \"required\": []}}}\n{\"type\": \"function\", \"function\": {\"name\": \"Get_Test_Mail\", \"description\": \"Retrieve a test email by its ID\", \"parameters\": {\"type\": \"object\", \"properties\": {\"id\": {\"description\": \"The ID of the test email to retrieve\", \"type\": \"string\"}}, \"required\": [\"id\"]}}}\n{\"type\": \"function\", \"function\": {\"name\": \"GetTeam\", \"description\": \"Retrieve team information by team ID\", \"parameters\": {\"type\": \"object\", \"properties\": {\"TeamId\": {\"description\": \"Unique identifier of the team\", \"type\": \"string\"}}, \"required\": [\"TeamId\"]}}}\n{\"type\": \"function\", \"function\": {\"name\": \"getInbox\", \"description\": \"Retrieves information about an email inbox, including its email address and ID.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"inboxId\": {\"description\": \"The ID of the inbox to retrieve information about\", \"type\": \"string\"}}, \"required\": [\"inboxId\"]}}}\n{\"type\": \"function\", \"function\": {\"name\": \"GetGroupOwners\", \"description\": \"Retrieve a list of owners for a specified group.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"GroupId\": {\"description\": \"The unique identifier of the group for which to retrieve the owners.\", \"type\": \"string\"}}, \"required\": [\"GroupId\"]}}}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT>\n\nCurrent time: 2025-04-05 04:48:42.<|im_end|>\n<|im_start|>user\nRole definition:\n Inquirer: A user who raises an inquiry.\n Response assistant: Communicates with the inquirer and provides answers and solutions.\n\n Historical dialog data is as follows:\nInquirer: I'm coordinating a project and need to send out an update email. Could you find out who the owners of the group Project-A are, and also check if I have saved the latest draft of the update in my Drive folder \"Project A Updates\"?\nResponse assistant: For the group owners, could you please provide the unique identifier (GroupId) for Project-A? Additionally, to check your Drive folder, I need the Drive ID and the specific Item ID of the \"Project A Updates\" folder.\nInquirer: The GroupId for Project-A is \"GRP12345\" and for the Drive folder, the Drive ID is \"0B1234DriveID\" and the \"Project A Updates\" folder Item ID is \"0B12345FolderID\".\n\n Please continue your answer given the historical dialog. Your role is the Response assistant.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "prompt_tokens": 1058
+  }
+]

@@ -1,0 +1,465 @@
+[
+  {
+    "id": "simple_150",
+    "category": "simple",
+    "question": "Calculate the return of investment of a bank's savings account with a deposit of $1000, annual interest rate of 3% for 1 year.",
+    "question_summary": "Рассчитать доход от вклада $1000 под 3% годовых за один год.",
+    "expected": "calculate_roi(deposit=1000, annual_interest_rate=0.03, years=1).",
+    "response_excerpt": "{\"calculate_roi\": {\"deposit\": 1000, \"annual_interest_rate\": 3, \"years\": 1}}",
+    "analysis": "Функция выбрана правильно, но процент передан как 3 вместо 0.03. Остаётся ошибка нормализации единиц, хотя разметка корректна.",
+    "ground_truth": [
+      {
+        "calculate_roi": {
+          "deposit": [
+            1000
+          ],
+          "annual_interest_rate": [
+            0.03
+          ],
+          "years": [
+            1
+          ]
+        }
+      }
+    ],
+    "calls": [
+      {
+        "calculate_roi": {
+          "deposit": 1000,
+          "annual_interest_rate": 3,
+          "years": 1
+        }
+      }
+    ],
+    "check": {
+      "valid": false,
+      "error": [
+        "Invalid value for parameter 'annual_interest_rate': 3.0. Expected one of [0.03]."
+      ],
+      "error_type": "value_error:others"
+    },
+    "response": "<tool_call>\n<function=calculate_roi>\n<parameter=deposit>\n1000\n</parameter>\n<parameter=annual_interest_rate>\n3\n</parameter>\n<parameter=years>\n1\n</parameter>\n</function>\n</tool_call>"
+  },
+  {
+    "id": "multiple_76",
+    "category": "multiple",
+    "question": "I want to order a custom bronze sculpture of a horse. What material options are available?",
+    "question_summary": "Заказать бронзовую скульптуру лошади и узнать доступные материалы.",
+    "expected": "Вызов sculpture.create_custom с item=\"horse\" и material=\"Bronze\".",
+    "response_excerpt": "The available materials for a custom bronze sculpture are:\n*   Bronze\n*   Marble\n*   Terracotta\n*   Wood\n*   Stone",
+    "analysis": "Нужный вызов пропущен: модель перечисляет материалы текстом, но parsed calls пуст. Запрос допускает и чтение как вопрос о материалах, однако эталон BFCL требует создание скульптуры. По неизменённому checker это ошибка.",
+    "ground_truth": [
+      {
+        "sculpture.create_custom": {
+          "item": [
+            "horse",
+            "Horse"
+          ],
+          "material": [
+            "Bronze",
+            "bronze"
+          ],
+          "size": [
+            "",
+            12
+          ]
+        }
+      }
+    ],
+    "calls": [],
+    "check": {
+      "valid": false,
+      "error": "Ожидался вызов инструмента."
+    },
+    "response": "The available materials for a custom bronze sculpture are:\n*   Bronze\n*   Marble\n*   Terracotta\n*   Wood\n*   Stone\n\nSince you specifically requested a bronze sculpture, the only material option you would choose is **Bronze**."
+  },
+  {
+    "id": "parallel_181",
+    "category": "parallel",
+    "question": "Can you use the get_stock_prices function to retrieve the stock prices for Apple, Microsoft, Amazon, and Tesla over the duration of 1 week, 2 weeks, 3 weeks, and 1 month respectively?",
+    "question_summary": "Получить цены Apple, Microsoft, Amazon и Tesla за 1, 2, 3 недели и месяц соответственно.",
+    "expected": "Четыре get_stock_prices: Apple/1 week, Microsoft/2 weeks, Amazon/3 weeks, Tesla/1 month.",
+    "response_excerpt": "{\"get_stock_prices\": {\"companies\": [\"Apple\", \"Microsoft\", \"Amazon\", \"Tesla\"], \"duration\": \"1 week\"}}",
+    "analysis": "Здесь показан первый из четырёх вызовов. В каждом модель передаёт сразу все компании, меняя только duration. Число вызовов верно, но потеряно соответствие «компания - период».",
+    "ground_truth": [
+      {
+        "get_stock_prices": {
+          "companies": [
+            [
+              "Apple"
+            ]
+          ],
+          "duration": [
+            "1 week"
+          ]
+        }
+      },
+      {
+        "get_stock_prices": {
+          "companies": [
+            [
+              "Microsoft"
+            ]
+          ],
+          "duration": [
+            "2 weeks"
+          ]
+        }
+      },
+      {
+        "get_stock_prices": {
+          "companies": [
+            [
+              "Amazon"
+            ]
+          ],
+          "duration": [
+            "3 weeks"
+          ]
+        }
+      },
+      {
+        "get_stock_prices": {
+          "companies": [
+            [
+              "Tesla"
+            ]
+          ],
+          "duration": [
+            "1 month"
+          ]
+        }
+      }
+    ],
+    "calls": [
+      {
+        "get_stock_prices": {
+          "companies": [
+            "Apple",
+            "Microsoft",
+            "Amazon",
+            "Tesla"
+          ],
+          "duration": "1 week"
+        }
+      },
+      {
+        "get_stock_prices": {
+          "companies": [
+            "Apple",
+            "Microsoft",
+            "Amazon",
+            "Tesla"
+          ],
+          "duration": "2 weeks"
+        }
+      },
+      {
+        "get_stock_prices": {
+          "companies": [
+            "Apple",
+            "Microsoft",
+            "Amazon",
+            "Tesla"
+          ],
+          "duration": "3 weeks"
+        }
+      },
+      {
+        "get_stock_prices": {
+          "companies": [
+            "Apple",
+            "Microsoft",
+            "Amazon",
+            "Tesla"
+          ],
+          "duration": "1 month"
+        }
+      }
+    ],
+    "check": {
+      "valid": false,
+      "error": [
+        "Could not find a matching function among index [0, 1, 2, 3] of model output for index 0 of possible answers.",
+        {
+          "Model Result Index 0": {
+            "sub_error": [
+              "Invalid value for parameter 'companies': ['Apple', 'Microsoft', 'Amazon', 'Tesla']. Expected one of [['Apple']]."
+            ],
+            "sub_error_type": "value_error:list/tuple",
+            "model_output_item": {
+              "get_stock_prices": {
+                "companies": [
+                  "Apple",
+                  "Microsoft",
+                  "Amazon",
+                  "Tesla"
+                ],
+                "duration": "1 week"
+              }
+            },
+            "possible_answer_item": {
+              "get_stock_prices": {
+                "companies": [
+                  [
+                    "Apple"
+                  ]
+                ],
+                "duration": [
+                  "1 week"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "Model Result Index 1": {
+            "sub_error": [
+              "Invalid value for parameter 'companies': ['Apple', 'Microsoft', 'Amazon', 'Tesla']. Expected one of [['Apple']]."
+            ],
+            "sub_error_type": "value_error:list/tuple",
+            "model_output_item": {
+              "get_stock_prices": {
+                "companies": [
+                  "Apple",
+                  "Microsoft",
+                  "Amazon",
+                  "Tesla"
+                ],
+                "duration": "2 weeks"
+              }
+            },
+            "possible_answer_item": {
+              "get_stock_prices": {
+                "companies": [
+                  [
+                    "Apple"
+                  ]
+                ],
+                "duration": [
+                  "1 week"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "Model Result Index 2": {
+            "sub_error": [
+              "Invalid value for parameter 'companies': ['Apple', 'Microsoft', 'Amazon', 'Tesla']. Expected one of [['Apple']]."
+            ],
+            "sub_error_type": "value_error:list/tuple",
+            "model_output_item": {
+              "get_stock_prices": {
+                "companies": [
+                  "Apple",
+                  "Microsoft",
+                  "Amazon",
+                  "Tesla"
+                ],
+                "duration": "3 weeks"
+              }
+            },
+            "possible_answer_item": {
+              "get_stock_prices": {
+                "companies": [
+                  [
+                    "Apple"
+                  ]
+                ],
+                "duration": [
+                  "1 week"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "Model Result Index 3": {
+            "sub_error": [
+              "Invalid value for parameter 'companies': ['Apple', 'Microsoft', 'Amazon', 'Tesla']. Expected one of [['Apple']]."
+            ],
+            "sub_error_type": "value_error:list/tuple",
+            "model_output_item": {
+              "get_stock_prices": {
+                "companies": [
+                  "Apple",
+                  "Microsoft",
+                  "Amazon",
+                  "Tesla"
+                ],
+                "duration": "1 month"
+              }
+            },
+            "possible_answer_item": {
+              "get_stock_prices": {
+                "companies": [
+                  [
+                    "Apple"
+                  ]
+                ],
+                "duration": [
+                  "1 week"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "error_type": "parallel_function_checker_no_order:cannot_find_match"
+    },
+    "response": "<tool_call>\n<function=get_stock_prices>\n<parameter=companies>\n[\"Apple\", \"Microsoft\", \"Amazon\", \"Tesla\"]\n</parameter>\n<parameter=duration>\n1 week\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=get_stock_prices>\n<parameter=companies>\n[\"Apple\", \"Microsoft\", \"Amazon\", \"Tesla\"]\n</parameter>\n<parameter=duration>\n2 weeks\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=get_stock_prices>\n<parameter=companies>\n[\"Apple\", \"Microsoft\", \"Amazon\", \"Tesla\"]\n</parameter>\n<parameter=duration>\n3 weeks\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=get_stock_prices>\n<parameter=companies>\n[\"Apple\", \"Microsoft\", \"Amazon\", \"Tesla\"]\n</parameter>\n<parameter=duration>\n1 month\n</parameter>\n</function>\n</tool_call>"
+  },
+  {
+    "id": "parallel_multiple_67",
+    "category": "parallel_multiple",
+    "question": "\"Can you help me with some math problems? First, I need to find the roots of a quadratic equation. The equation is 3x^2 + 4x - 7 = 0, where 3 is the coefficient of the second-degree term, 4 is the coefficient of the first-degree term, and -7 is the constant term. \n\nSecond, I have a cubic equation, 2x^3 - 5x^2 + 3x - 1 = 0. Here, 2 is the coefficient of the third-degree term, -5 is the coefficient of the second-degree term, 3 is the coefficient of the first-degree term, and -1 is the constant term. \n\nFinally, I have a polynomial equation of degree 4, which is 6x^4 - 3x^3 + 2x^2 - x + 1 = 0. The array of coefficients of the polynomial equation starting from the highest degree term is [6, -3, 2, -1, 1]. Can you calculate the roots for these equations?\"",
+    "question_summary": "Найти корни квадратного, кубического и полиномиального уравнений; коэффициенты последнего: [6, -3, 2, -1, 1].",
+    "expected": "Три вызова; у math.roots.polynomial массив coefficients должен содержать float: [6.0, -3.0, 2.0, -1.0, 1.0].",
+    "response_excerpt": "{\"math.roots.polynomial\": {\"coefficients\": [6, -3, 2, -1, 1]}}",
+    "analysis": "Показан третий вызов. Числа по смыслу верны, но checker отклоняет вложенный тип int вместо float. Это конкретный разрыв с числовой нормализацией в reward. Правила evaluator сохранены.",
+    "ground_truth": [
+      {
+        "math_roots.quadratic": {
+          "a": [
+            3.0
+          ],
+          "b": [
+            4.0
+          ],
+          "c": [
+            -7.0
+          ]
+        }
+      },
+      {
+        "math.roots.cubic": {
+          "a": [
+            2.0
+          ],
+          "b": [
+            -5.0
+          ],
+          "c": [
+            3.0
+          ],
+          "d": [
+            -1.0
+          ]
+        }
+      },
+      {
+        "math.roots.polynomial": {
+          "coefficients": [
+            [
+              6.0,
+              -3.0,
+              2.0,
+              -1.0,
+              1.0
+            ]
+          ],
+          "degree": [
+            4.0,
+            ""
+          ]
+        }
+      }
+    ],
+    "calls": [
+      {
+        "math_roots.quadratic": {
+          "a": 3,
+          "b": 4,
+          "c": -7
+        }
+      },
+      {
+        "math.roots.cubic": {
+          "a": 2,
+          "b": -5,
+          "c": 3,
+          "d": -1
+        }
+      },
+      {
+        "math.roots.polynomial": {
+          "coefficients": [
+            6,
+            -3,
+            2,
+            -1,
+            1
+          ]
+        }
+      }
+    ],
+    "check": {
+      "valid": false,
+      "error": [
+        "Could not find a matching function among index [2] of model output for index 2 of possible answers.",
+        {
+          "Model Result Index 2": {
+            "sub_error": [
+              "Nested type checking failed for parameter 'coefficients'. Expected outer type array with inner type <class 'float'>. Parameter value: [6, -3, 2, -1, 1]."
+            ],
+            "sub_error_type": "type_error:nested",
+            "model_output_item": {
+              "math.roots.polynomial": {
+                "coefficients": [
+                  6,
+                  -3,
+                  2,
+                  -1,
+                  1
+                ]
+              }
+            },
+            "possible_answer_item": {
+              "math.roots.polynomial": {
+                "coefficients": [
+                  [
+                    6.0,
+                    -3.0,
+                    2.0,
+                    -1.0,
+                    1.0
+                  ]
+                ],
+                "degree": [
+                  4.0,
+                  ""
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "error_type": "parallel_function_checker_no_order:cannot_find_match"
+    },
+    "response": "<tool_call>\n<function=math_roots.quadratic>\n<parameter=a>\n3\n</parameter>\n<parameter=b>\n4\n</parameter>\n<parameter=c>\n-7\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=math.roots.cubic>\n<parameter=a>\n2\n</parameter>\n<parameter=b>\n-5\n</parameter>\n<parameter=c>\n3\n</parameter>\n<parameter=d>\n-1\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=math.roots.polynomial>\n<parameter=coefficients>\n[6, -3, 2, -1, 1]\n</parameter>\n</function>\n</tool_call>"
+  },
+  {
+    "id": "irrelevance_233",
+    "category": "irrelevance",
+    "question": "What is the equivalent of $20 in British Pounds?",
+    "question_summary": "Перевести $20 в британские фунты; доступен только инструмент погоды.",
+    "expected": "Никакого вызова: у доступной weather_in_location нет функции обмена валют.",
+    "response_excerpt": "{\"weather_in_location\": {\"location\": \"London\", \"unit\": \"C\"}}",
+    "analysis": "Лишний вызов: модель привязала фунты к Лондону и запросила погоду. Она узнаёт знакомый инструмент, но не проверяет соответствие его назначения запросу.",
+    "ground_truth": [],
+    "calls": [
+      {
+        "weather_in_location": {
+          "location": "London",
+          "unit": "C"
+        }
+      }
+    ],
+    "check": {
+      "valid": false,
+      "error": "Вызов инструмента не требовался."
+    },
+    "response": "<tool_call>\n<function=weather_in_location>\n<parameter=location>\nLondon\n</parameter>\n<parameter=unit>\nC\n</parameter>\n</function>\n</tool_call>"
+  }
+]

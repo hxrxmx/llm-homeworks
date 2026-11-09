@@ -1,0 +1,99 @@
+{
+  "dataset": "Team-ACE/ToolACE",
+  "dataset_revision": "6bda777c88d21e5a204703c1ee45597a8fa4f734",
+  "raw_sha256": "ba12c083fca7e8da48c67ad5b895e495447da7c66e39a2e19742c082e6cb537e",
+  "model": "Qwen/Qwen3.5-2B",
+  "model_revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+  "seed": 42,
+  "raw_dialogs": 11300,
+  "raw_roles": {
+    "user": 12452,
+    "assistant": 13819,
+    "tool": 1367
+  },
+  "raw_dialog_turns": {
+    "10": 207,
+    "12": 93,
+    "8": 232,
+    "6": 262,
+    "4": 6,
+    "2": 10500
+  },
+  "prefixes_before_filter": 11874,
+  "quantiles_before_filter": {
+    "prompt_tokens": {
+      "0": 21.0,
+      "0.25": 518.0,
+      "0.5": 701.0,
+      "0.75": 936.0,
+      "0.9": 1212.0,
+      "0.95": 1404.3500000000004,
+      "0.99": 1930.0800000000017,
+      "1": 4595.0
+    },
+    "answer_tokens": {
+      "0": 2.0,
+      "0.25": 18.0,
+      "0.5": 37.0,
+      "0.75": 68.0,
+      "0.9": 130.0,
+      "0.95": 210.0,
+      "0.99": 381.27000000000044,
+      "1": 1174.0
+    },
+    "tools": {
+      "0": 0.0,
+      "0.25": 1.0,
+      "0.5": 3.0,
+      "0.75": 5.0,
+      "0.9": 6.0,
+      "0.95": 6.0,
+      "0.99": 8.0,
+      "1": 9.0
+    },
+    "calls": {
+      "0": 0.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 2.0,
+      "0.9": 4.0,
+      "0.95": 4.0,
+      "0.99": 5.0,
+      "1": 12.0
+    }
+  },
+  "kinds_before_filter": {
+    "call": 9579,
+    "no_call": 2295
+  },
+  "filters": {
+    "prompt_over_2048": 82,
+    "empty_text": 5,
+    "SyntaxError": 49,
+    "ValueError": 519,
+    "duplicate_prompt": 36
+  },
+  "unique_tools_kept": 16019,
+  "max_prompt_tokens": 2048,
+  "validation_eval_examples": 192,
+  "splits": {
+    "train": {
+      "rows": 11154,
+      "dialogs": 10150,
+      "kinds": {
+        "call": 9008,
+        "no_call": 2146
+      },
+      "sha256": "5e298ea2f6d54e0e41634438a6e969dcec1e2df02454e0e8390c8052d92789a6"
+    },
+    "validation": {
+      "rows": 602,
+      "dialogs": 542,
+      "kinds": {
+        "call": 496,
+        "no_call": 106
+      },
+      "sha256": "711c67a7099509f4ca4d2d3e9fadb01ba5eef2959ad171e7dda8e074911f685a"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+torch==2.11.0
+vllm==0.22.0
+trl==1.16.0
+transformers==5.9.0
+peft==0.18.1
+datasets==4.7.0
+accelerate==1.10.1
+flash-linear-attention==0.4.1
+bfcl-eval==2026.3.23
+numpy==2.2.6
+soundfile==0.14.0
+scipy==1.16.2
+matplotlib==3.10.1
+pandas==2.2.3
+reportlab==4.4.9

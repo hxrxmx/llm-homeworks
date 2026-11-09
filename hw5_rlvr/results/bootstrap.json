@@ -1,0 +1,37 @@
+[
+  {
+    "run": "grpo_exact",
+    "reference": "base",
+    "delta_overall": 0.015999999999999903,
+    "low": -0.029333333333333336,
+    "high": 0.06133333333333334
+  },
+  {
+    "run": "grpo_shaped",
+    "reference": "base",
+    "delta_overall": 0.09999999999999998,
+    "low": 0.048,
+    "high": 0.15466666666666667
+  },
+  {
+    "run": "dr_grpo_shaped",
+    "reference": "base",
+    "delta_overall": 0.09466666666666668,
+    "low": 0.050666666666666665,
+    "high": 0.13866666666666666
+  },
+  {
+    "run": "grpo_shaped",
+    "reference": "grpo_exact",
+    "delta_overall": 0.08400000000000007,
+    "low": 0.03866666666666667,
+    "high": 0.132
+  },
+  {
+    "run": "grpo_shaped",
+    "reference": "dr_grpo_shaped",
+    "delta_overall": 0.005333333333333301,
+    "low": -0.03066666666666667,
+    "high": 0.04
+  }
+]
