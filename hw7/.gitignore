@@ -1,0 +1,10 @@
+*.safetensors
+*.bin
+*.pt
+*.tar.gz
+*.tar.gz.part-*
+*.log
+/.venv/
+/.weights/
+/artifacts_compression_hw/student_candidates/
+/artifacts_compression_hw/.work/

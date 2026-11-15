@@ -1,0 +1,14 @@
+{
+  "torch": "2.8.0",
+  "transformers": "4.55.2",
+  "datasets": "4.1.1",
+  "llmcompressor": "0.8.1",
+  "compressed-tensors": "0.12.2",
+  "accelerate": "1.10.1",
+  "safetensors": "0.6.2",
+  "huggingface-hub": "0.35.3",
+  "gpu": "NVIDIA A100 80GB PCIe",
+  "cuda": "12.8",
+  "generate_batch_size": 32,
+  "max_new_tokens": 128
+}

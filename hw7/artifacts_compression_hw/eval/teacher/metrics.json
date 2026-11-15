@@ -1,0 +1,15 @@
+{
+  "quality": 0.5805213874113475,
+  "intent_accuracy": 0.78515625,
+  "slot_micro_f1": 0.375886524822695,
+  "frame_exact_match": 0.3125,
+  "valid_json_rate": 0.9765625,
+  "n": 256,
+  "run": "teacher",
+  "config": {
+    "model": "Qwen/Qwen3-32B",
+    "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+    "precision": "bf16"
+  },
+  "eval_seconds": 116.34538159999647
+}

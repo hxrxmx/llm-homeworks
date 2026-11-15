@@ -1,0 +1,24 @@
+{
+  "quality": 0.5644601129248659,
+  "intent_accuracy": 0.74609375,
+  "slot_micro_f1": 0.3828264758497317,
+  "frame_exact_match": 0.3125,
+  "valid_json_rate": 0.98828125,
+  "n": 256,
+  "run": "sft_512",
+  "config": {
+    "samples": 512,
+    "lr": 2e-05,
+    "epochs": 2,
+    "valid_samples": 505,
+    "train_ids_sha256": "4bad00b6c877a1b367f5e60fdc064166bba7a878595b8435d5d09db0151f24d9",
+    "batch_size": 4,
+    "grad_accum": 4,
+    "steps": 64,
+    "base_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "train_seconds": 93.63572051099618,
+    "peak_gib": 32.71396732330322,
+    "bytes": 3441185320
+  },
+  "eval_seconds": 14.445212055987213
+}

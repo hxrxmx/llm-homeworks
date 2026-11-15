@@ -1,0 +1,15 @@
+{
+  "quality": 0.17410579819277108,
+  "intent_accuracy": 0.2421875,
+  "slot_micro_f1": 0.10602409638554217,
+  "frame_exact_match": 0.0390625,
+  "valid_json_rate": 0.4375,
+  "n": 256,
+  "run": "baseline",
+  "config": {
+    "model": "Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "precision": "bf16"
+  },
+  "eval_seconds": 25.332641921995673
+}

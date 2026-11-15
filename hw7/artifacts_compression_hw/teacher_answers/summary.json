@@ -1,0 +1,6 @@
+{
+  "n": 2048,
+  "valid": 1994,
+  "train_ids_sha256": "7a63c6e5ab3ea49bedbcccf923e4b52e3701b495381c087d93fac0eee342c1d7",
+  "teacher_revision": "9216db5781bf21249d130ec9da846c4624c16137"
+}
