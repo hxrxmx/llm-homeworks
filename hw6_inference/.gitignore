@@ -1,0 +1,8 @@
+/data/
+/cache/
+*.pid
+*.log
+**/profile_export.jsonl
+**/profile_export_raw.jsonl
+**/outputs.json
+**/logs/

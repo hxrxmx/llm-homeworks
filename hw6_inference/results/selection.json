@@ -1,0 +1,16 @@
+{
+  "tune": "baseline",
+  "spec": "ngram",
+  "best": "baseline",
+  "best_tune": "baseline",
+  "max_rpm": 150,
+  "first_fail_rpm": 180,
+  "spec_rpm": [
+    60,
+    120,
+    240,
+    360,
+    480,
+    720
+  ]
+}
